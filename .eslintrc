@@ -1,0 +1,23 @@
+{
+  "rules": {
+    "indent": [0],
+    "space-before-function-paren": [0],
+    "no-unused-vars": [2, {
+      "varsIgnorePattern": "[rR]eact"
+    }],
+    "no-console": 0,
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "jsx": true,
+    "experimentalObjectRestSpread": true,
+    "modules": true
+  },
+  "plugins": [
+    "react"
+  ]
+}

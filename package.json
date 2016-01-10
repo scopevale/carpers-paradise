@@ -1,0 +1,19 @@
+{
+  "name": "carpers-paradise",
+  "version": "1.0.0",
+  "description": "Carper's Paradise Website",
+  "repository": "git@github.com:scopevale/carpers-paradise.git",
+  "main": "src/server/index.js",
+  "scripts": {
+    "test": "tape"
+  },
+  "author": "Gary Smith <scopevale@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-stormpath": "^2.3.4"
+  },
+  "devDependencies": {
+    "tape": "^4.4.0"
+  }
+}
