@@ -1,0 +1,57 @@
+//--------------------------------------------------------
+//    FU - Object - Display Table
+//--------------------------------------------------------
+
+// Author(s):
+//    * Gareth Davies
+// Notes:
+//    * This is purely structural for a table display layout
+//  * Mobile first naturally
+
+
+
+
+//------------------------------------
+// $ Scaffolding
+//------------------------------------
+
+.o-display-table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.o-display-table__row {
+    display: table-row;
+}
+
+.o-display-table__cell {
+    display: table-cell;
+}
+
+
+
+
+//------------------------------------
+// $ Content Specific
+//------------------------------------
+
+// Make content aligned to middle
+.o-display-table__cell {
+
+    // Fixed size to ensure correct alignment
+    &.has-icon {
+        width: 60px;
+    }
+
+    // Fixed size to ensure correct alignment
+    &.has-icon--small {
+        width: 45px;
+    }
+
+    // Make content aligned to middle
+    .o-display-table--align-middle & {
+        vertical-align: middle;
+    }
+
+}

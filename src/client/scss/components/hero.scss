@@ -1,0 +1,97 @@
+//--------------------------------------------------------
+// FU - Component - Card
+//--------------------------------------------------------
+
+// Requires:
+//  * _variables.scss
+// Author(s):
+//  * Gareth Davies
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+
+
+//------------------------------------
+// $ Scaffolding
+//------------------------------------
+
+.c-hero {
+    position: relative;
+    width: 100%;
+    max-width: $layout-site-max-width;
+    overflow-x: hidden;
+    display: inline-block;
+    background-color: $colour-white;
+}
+
+
+
+
+//------------------------------------
+// $ Background images
+//------------------------------------
+
+.c-hero__background-image {
+    position: relative;
+    left: 50%;
+    // TODO: We need to define a mobile image width
+    margin-left: -($layout-site-max-width / 2);
+}
+
+
+
+
+//------------------------------------
+// $ Content area
+//------------------------------------
+
+.c-hero__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: ($padding-baseline * 2);
+}
+
+.c-hero__title {
+    margin: 0;
+}
+
+.c-hero__title,
+.c-hero__tagline {
+    color: $colour-white;
+    text-shadow: 0 1px 0 ¢colour-box-shadow;
+}
+
+// >= 1024px
+
+@media (min-width: 1024px) {
+
+    .c-hero__content {
+        padding: ($padding-baseline * 4);
+    }
+
+}
+
+
+
+
+//------------------------------------
+// $ Background modifiers
+//------------------------------------
+
+@each $property, $value in $colour-palette {
+
+    .c-hero--#{$property} {
+        background-color: $value;
+    }
+
+}

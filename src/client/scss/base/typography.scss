@@ -1,0 +1,144 @@
+//--------------------------------------------------------
+//  FU - Base - Typography
+//--------------------------------------------------------
+
+// Requires:
+//    * _fonts.scss
+// Author(s):
+//    * Gareth Davies
+// Notes:
+//    * Refactored from style.scss
+//    * Mobile first please
+//    * Sizes calculated using: http://type-scale.com
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+
+
+//------------------------------------
+// $ Base
+//------------------------------------
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'FrutigerLTW01-45Light', sans-serif;
+    color: $colour-dark-grey;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
+
+
+
+
+//------------------------------------
+// $ Headings
+//------------------------------------
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+    letter-spacing: -.02em;
+    color: $colour-purple;
+    font-weight: 200;
+    line-height: 2.4rem;
+}
+
+// Note: h1 only currently used in .page-heading element
+
+h1, .h1 {
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+}
+
+h2, .h2 {
+    font-size: 2.3rem;
+}
+
+h3, .h3 {
+    font-size: 2rem;
+}
+
+h4, .h4 {
+    font-size: 1.8rem;
+}
+
+h5, .h5 {
+    font-family: 'Frutiger Neue W01 Bd', sans-serif;
+    font-size: 1.6rem;
+}
+
+// >= 769px
+
+@media (min-width: 769px) {
+
+    h1, .h1 {
+        font-size: 4.8rem;
+        line-height: 4.8rem;
+    }
+
+    h2, .h2 {
+        font-size: 3.4rem;
+        line-height: 3.4rem;
+    }
+
+    h3, .h3 {
+        font-size: 2.6rem;
+        line-height: 2.6rem;
+    }
+
+    h4, .h4 {
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+
+}
+
+// >= 1024px
+
+@media (min-width: 1024px) {
+
+    h1, .h1 {
+        font-size: 6.4rem;
+        line-height: 6.4rem;
+    }
+
+    h2, .h2 {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+    }
+
+    h3, .h3 {
+        font-size: 3.2rem;
+        line-height: 3.2rem;
+    }
+
+    h4, .h4 {
+        font-size: 2.3rem;
+        line-height: 2.6rem;
+    }
+
+}
+
+
+
+
+//------------------------------------
+// $ Weights
+//------------------------------------
+
+strong,
+b {
+    font-family: 'Frutiger Neue W01 Bd', sans-serif;
+}

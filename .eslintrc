@@ -1,11 +1,30 @@
 {
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
   "rules": {
-    "indent": [0],
-    "space-before-function-paren": [0],
+    "complexity": [2, 6],
+    "max-len": [2, 120, 4, {"ignoreComments": true, "ignoreUrls": true}],
+    "max-params": [2, 4],
+    "max-statements": [2, 10],
+    "max-depth": [2, 2],
+    "max-nested-callbacks": [2, 3],
+    "indent": [2, 2],
+    "linebreak-style": [2, "unix"],
+    "semi": [2, "always"],
+    "space-before-function-paren": [2, { "anonymous": "always", "named": "never" }],
+    "curly": [2, "all"],
+    "brace-style": [2, "1tbs"],
+    "quotes": [1, "single", "avoid-escape"],
+    "eqeqeq": [2, "allow-null"],
+    "new-cap": 2,
+    "space-before-blocks": [2, "always"],
+    "space-after-keywords": [2, "always"],
+    "no-trailing-spaces": [2, { "skipBlankLines": true }],
     "no-unused-vars": [2, {
       "varsIgnorePattern": "[rR]eact"
     }],
     "no-console": 0,
+    "react/wrap-multilines": 1
   },
   "env": {
     "es6": true,
@@ -18,6 +37,7 @@
     "modules": true
   },
   "plugins": [
-    "react"
+    "react",
+    "mocha"
   ]
 }

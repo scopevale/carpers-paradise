@@ -1,0 +1,214 @@
+//--------------------------------------------------------
+//	FU - Layout - Header
+//--------------------------------------------------------
+
+// Author(s):
+//	* Gareth Davies
+// Notes:
+//	* Mobile first please
+//	* Styling for the main site header only
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+
+
+//------------------------------------
+// $ Scaffolding
+//------------------------------------
+
+.l-site-header {
+
+    // TEMP
+    height: 70px;
+    //
+
+    display: block;
+    overflow: inherit;
+    width: 100%;
+    background-color: $colour-purple;
+
+    @media (min-width: $site-header-breakpoint) {
+        background-color: $colour-white;
+        border-bottom: 1px solid $colour-mid-grey;
+    }
+}
+
+
+
+
+//------------------------------------
+// $ Shared
+//------------------------------------
+
+// .l-site-header__mobilemenu,
+// .l-site-header__menu,
+// .l-site-header__submenu {
+//
+//     // Shared link styling
+//
+//     a:not(.l-site-header__logo) {
+//         display: block;
+//         text-decoration: none;
+//         color: $colour-white;
+//         padding: $padding-baseline ($padding-baseline * 2);
+//
+//         @media (min-width: $site-header-breakpoint) {
+//             padding: $padding-baseline;
+//             border-bottom: none;
+//             color: $colour-dark-grey;
+//         }
+//     }
+//
+// }
+//
+//
+//
+//
+// //------------------------------------
+// // $ Mobile menu
+// //------------------------------------
+//
+// .l-site-header__mobilemenu {
+//     border-bottom: 1px solid darken($colour-purple, 10%);
+//
+//     @media (min-width: $site-header-breakpoint) {
+//         display: none;
+//     }
+//
+// }
+//
+//
+//
+//
+// //------------------------------------
+// // $ Logo
+// //------------------------------------
+//
+// // This relies on the relative positioned parent element
+//
+// .l-site-header__logo {
+//     display: none;
+//
+//     @media (min-width: $site-header-breakpoint) {
+//         display: inherit;
+//         position: absolute;
+//         z-index: 2;
+//         left: $site-header-logo-indent;
+//     }
+// }
+//
+//
+//
+//
+// //------------------------------------
+// // $ Main menu
+// //------------------------------------
+//
+// .l-site-header__menu {
+//
+//     // TODO: offcanvas menu for mobile
+//     position: fixed;
+//     top: 0;
+//     right: 0;
+//     width: 280px;
+//     height: 100%;
+//     border-left: 1px solid darken($colour-purple, 5%);
+//     background-color: darken($colour-purple, 10%);
+//
+//
+//
+//     @media (min-width: $site-header-breakpoint) {
+//         position: relative;
+//         top: auto;
+//         right: auto;
+//         width: 100%;
+//         max-width: $layout-site-max-width;
+//         margin: 0 auto;
+//         background-color: $colour-white;
+//         border-left: none;
+//     }
+// }
+//
+// // Main menu list
+//
+// .l-site-header__menu-list {
+//
+//     //
+//     > li > a {
+//         background-color: $colour-purple;
+//         border-bottom: 1px solid darken($colour-purple, 10%);
+//     }
+//
+//     @media (min-width: $site-header-breakpoint) {
+//         position: relative;
+//         // Allow for the logo
+//         left: $site-header-logo-width;
+//         max-width: calc(100% - #{$site-header-logo-width});
+//
+//         > li > a:not(.l-site-header__logo) {
+//             padding: ($padding-baseline * 2) $padding-baseline;
+//             background-color: $colour-white;
+//         }
+//     }
+//
+// }
+//
+//
+//
+//
+// //------------------------------------
+// // $ Sub menu
+// //------------------------------------
+//
+// .l-site-header__submenu {
+//     background-color: darken($colour-purple, 5%);
+//
+//     a {
+//         border-bottom: 1px solid darken($colour-purple, 10%);
+//     }
+//
+//     // li:first-child > a {
+//     //     border-top: 1px solid darken($colour-purple, 10%);
+//     // }
+//
+//     a:before {
+//         content: '\02013';
+//         padding: 0 $padding-baseline 0 0;
+//     }
+//
+//
+//
+//     @media (min-width: $site-header-breakpoint) {
+//         display: none;
+//         position: absolute;
+//         left: -$site-header-logo-width;
+//         width: calc(100% + #{$site-header-logo-width});
+//         max-width: $layout-site-max-width;
+//         padding: 0 $padding-baseline 0 $site-header-logo-width;
+//         background-color: $colour-yellow;
+//
+//         // Reset links
+//
+//         // a:not(.l-site-header__logo) {
+//         //     line-height: $site-header-mobile-height;
+//         // }
+//
+//         a:before {
+//             content: '';
+//             padding: 0;
+//         }
+//
+//         // Display the submenu on parent link hover
+//         .l-site-header__menu ul > li:hover & {
+//             display: inherit;
+//         }
+//     }
+// }

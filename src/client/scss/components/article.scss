@@ -1,0 +1,52 @@
+//--------------------------------------------------------
+//	FU - Components - Article
+//--------------------------------------------------------
+
+// Requires:
+//  * _variables.scss
+//  * _mixins.scss
+//  * _susy.scss
+// Author(s):
+//	* Gareth Davies
+// Notes:
+//	* Mobile first please
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+@import '../helper/mixins';
+@import '../config/susy';
+
+
+
+
+//------------------------------------
+// $ Article aside
+//------------------------------------
+
+// This styling only applies when article has a sibling
+// with the *__aside class and the article element
+// has the has-aside class
+
+// >= 768px
+
+@media (min-width: 768px) {
+
+    .c-article {
+
+        &.has-aside {
+            @include span(14);
+
+            + .c-article__aside {
+                @include span(6 last);
+            }
+        }
+
+    }
+
+}

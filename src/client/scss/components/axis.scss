@@ -1,0 +1,33 @@
+//--------------------------------------------------------
+//	FU - Components - Axis - D3/React component
+//--------------------------------------------------------
+
+// Requires:
+//  * _variables.scss
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+//------------------------------------
+// $ Axis Element
+//------------------------------------
+
+
+g .x .axis {
+    font-size: 1.3rem;
+}
+
+g .y .axis {
+    font-size: 1rem;
+}
+
+g .axis line {
+    fill: none;
+    stroke: $colour-blue;
+    shape-rendering: crispEdges;
+}

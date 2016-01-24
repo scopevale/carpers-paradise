@@ -1,0 +1,44 @@
+//--------------------------------------------------------
+//	FU - Components - Bar - D3/React component
+//--------------------------------------------------------
+
+// Requires:
+//  * _variables.scss
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+//------------------------------------
+// $ Bar Element
+//------------------------------------
+
+
+.gas-usage {
+    fill: $colour-teal;
+    stroke: $colour-teal;
+
+    // State
+    &:hover {
+        fill: lighten($colour-teal, 10%);
+        stroke: lighten($colour-teal, 10%);
+    }
+
+}
+
+.electricity-usage {
+    fill: $colour-purple;
+    stroke: $colour-purple;
+
+    // State
+    &:hover {
+        fill: lighten($colour-purple, 10%);
+        stroke: lighten($colour-purple, 10%);
+    }
+}

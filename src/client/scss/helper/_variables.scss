@@ -1,0 +1,129 @@
+//--------------------------------------------------------
+//	FU - Helper - Variables
+//--------------------------------------------------------
+
+// Author(s):
+//	* Gareth Davies
+// Notes:
+//	* Please prefix variables accordingly to avoid collisions
+
+
+
+
+//------------------------------------
+// $ Colours
+//------------------------------------
+
+// Prefix: colour-*
+
+$colour-white: #fff;
+$colour-purple: #823a8c;
+$colour-blue: #006eaa;
+$colour-yellow: #f9c82d;
+$colour-teal: #65c2cc;
+$colour-light-grey: #eee;
+$colour-mid-grey: #ccc;
+$colour-dark-grey: #333;
+$colour-green: #87a82f;
+$colour-red: #900;
+
+$colour-gold: #dfaf23;
+$colour-silver: #c0c0c0;
+$colour-bronze: #b78a7e;
+
+$colour-palette: ("purple": $colour-purple, "blue": $colour-blue, "yellow": $colour-yellow, "teal":  $colour-teal, "green": $colour-green);
+$colour-levels: ("gold": $colour-gold, "silver": $colour-silver, "bronze": $colour-bronze, "white": $colour-white);
+
+// Box-shadow
+
+$colour-box-shadow: rgba(0, 0, 0, .25);
+
+// Overlay
+
+$colour-overlay: rgba(0, 0, 0, .75);
+
+$colour-pagination-control: rgba(0, 200, 0, .25);
+
+//------------------------------------
+// $ Margins
+//------------------------------------
+
+// Prefix: margin-*
+
+// A value to base all other margins on
+$margin-baseline: 10px;
+
+
+
+
+//------------------------------------
+// $ Padding
+//------------------------------------
+
+// Prefix: padding-
+
+// A value to base all other padding on
+$padding-baseline: 10px;
+
+
+
+
+//------------------------------------
+// $ Borders
+//------------------------------------
+
+// Prefix: border-
+
+$border-default: 1px solid $colour-mid-grey;
+
+
+
+
+//------------------------------------
+// $ Layout
+//------------------------------------
+
+// Prefix: layout-*
+
+// A value to base all other padding on
+$layout-site-max-width: 1140px;
+
+//------------------------------------
+// $ Variables
+//------------------------------------
+
+$layout-susy-no-gutters: (
+    gutters: 0
+);
+
+
+
+
+//------------------------------------
+// $ Forms & Buttons
+//------------------------------------
+
+// Prefix: form-*
+
+// Applied to text inputs and buttons
+$form-input-min-height: 42px;
+
+
+
+
+//------------------------------------
+// $ Main header & footer specific
+//------------------------------------
+
+// Prefix: site-header-*
+
+$site-header-breakpoint: 500px;
+$site-header-height: 70px;
+$site-header-mobile-height: 50px;
+$site-header-logo-indent: 20px;
+// Logo width + indent + logo indent
+$site-header-logo-width: (133px + ($padding-baseline + $site-header-logo-indent));
+
+// Prefix: site-footer-*
+
+$site-footer-height: 300px;

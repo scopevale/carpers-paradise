@@ -1,0 +1,47 @@
+//--------------------------------------------------------
+// FU - Layout - Footer
+//--------------------------------------------------------
+
+// Author(s):
+//    * Gareth Davies
+// Notes:
+//    * Mobile first please
+//    * Styling for the main site footer only
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+
+
+
+//------------------------------------
+// $ Scaffolding
+//------------------------------------
+
+.l-site-footer {
+    display: block;
+    width: 100%;
+    background-color: $colour-purple;
+}
+
+// >= 769px
+
+@media (min-width: 769px) {
+
+    // Sticky footer (Requires a height value)
+
+    .l-site-footer {
+        height: $site-footer-height;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+}

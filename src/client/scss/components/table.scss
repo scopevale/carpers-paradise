@@ -1,0 +1,90 @@
+//--------------------------------------------------------
+//  FU - Components - Table
+//--------------------------------------------------------
+
+// Author(s):
+//  * Gareth Davies
+// Notes:
+//  * Mobile first naturally
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+
+
+//------------------------------------
+// $ Scaffolding
+//------------------------------------
+
+.c-table {
+    width: 100%;
+    table-layout: fixed;
+    margin-bottom: $margin-baseline * 2;
+
+    thead {
+        // Bold headings
+        font-family: Frutiger Neue W01 Bd, sans-serif;
+        font-weight: 600;
+    }
+
+    td {
+        padding: $padding-baseline;
+        // Reduce font size to fit more in
+        font-size: 90%;
+    }
+}
+
+
+
+
+//------------------------------------
+// $ Modifiers
+//------------------------------------
+
+// Add light grey bg to each row
+
+.c-table--greyrows {
+    tr {
+        background-color: $colour-light-grey;
+        // White 1px gap
+        border-top: 1px solid $colour-white;
+    }
+
+}
+
+// Add light grey bg to each row
+
+.c-table--last-td-right {
+
+    tr td:last-child:not(:only-of-type) {
+        text-align: right;
+    }
+
+}
+
+
+
+
+//------------------------------------
+// $ Media Queries
+//------------------------------------
+
+// >= 768px
+
+@media (min-width: 768px) {
+
+    .c-table {
+        td {
+            // Take font size back to normal
+            font-size: 1.6rem;
+        }
+    }
+
+}

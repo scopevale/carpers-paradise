@@ -1,0 +1,62 @@
+//--------------------------------------------------------
+// FU - Object - Inline List
+//--------------------------------------------------------
+
+// Author(s):
+//    * Gareth Davies
+// Notes:
+//    * This is purely structural for an inline list
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+
+
+//------------------------------------
+// $ Mixins
+//------------------------------------
+
+@mixin inline-list() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+        display: inline-block;
+        list-style: none;
+
+        > a {
+            display: block;
+        }
+    }
+}
+
+
+
+
+//------------------------------------
+// $ Scaffolding
+//------------------------------------
+
+.o-inline-list {
+    @include inline-list();
+}
+
+// Breakpoint specific
+
+@media (min-width: $site-header-breakpoint) {
+
+    // Only inline at >= 768px
+
+    .o-inline-list\@768 {
+        @include inline-list();
+    }
+
+}

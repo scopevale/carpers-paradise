@@ -1,0 +1,180 @@
+//--------------------------------------------------------
+// FU - Component - Card
+//--------------------------------------------------------
+
+// Requires:
+//    * _variables.scss
+// Author(s):
+//    * Gareth Davies
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+
+
+//------------------------------------
+// $ Variables
+//------------------------------------
+
+$card-arrow-border-width: 20px;
+
+
+
+
+//------------------------------------
+// $ Scaffolding
+//------------------------------------
+
+.c-card {
+    position: relative;
+    width: 100%;
+    margin-bottom: ($margin-baseline * 2);
+    background-color: $colour-white;
+}
+
+// Card border
+
+.c-card--bordered {
+    border: $border-default;
+    box-shadow: 0 3px 0 -2px $colour-box-shadow;
+}
+
+
+
+
+//------------------------------------
+// $ Background modifiers
+//------------------------------------
+
+@each $property, $value in $colour-palette {
+
+    .c-card--#{$property} {
+        background-color: $value;
+        color: $colour-white;
+    }
+
+}
+
+
+
+
+//------------------------------------
+// $ Typography
+//------------------------------------
+
+.c-card {
+    h2, .h2,
+    h3, .h3,
+    h4, .h4 {
+        color: $colour-mid-grey;
+    }
+}
+
+// Text align
+
+.c-card--centered-text {
+    text-align: center;
+}
+
+
+
+
+//------------------------------------
+// $ Header
+//------------------------------------
+
+.c-card__header {
+    padding: ($padding-baseline * 2);
+    position: relative;
+
+    // Bottom arrow
+
+    &.has-arrow {
+        margin-bottom: ($margin-baseline * 3);
+    }
+
+    &.has-arrow::after {
+        content: '';
+        top: 100%;
+        left: 50%;
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border: solid transparent;
+        border-color: transparent;
+        border-top-color: $colour-white;
+        // border-width: $card-arrow-border-width;
+        // margin-left: -$card-arrow-border-width;
+    }
+}
+
+// Background & arrow colours
+
+@each $property, $value in $colour-levels {
+
+    .c-card__header--#{$property} {
+        background-color: $value;
+
+        &.has-arrow::after {
+            border-top-color: $value;
+        }
+    }
+
+}
+
+@each $property, $value in $colour-palette {
+
+    .c-card__header--#{$property} {
+        background-color: $value;
+
+        &.has-arrow::after {
+            border-top-color: $value;
+        }
+    }
+
+}
+
+
+
+
+//------------------------------------
+// $ Content region
+//------------------------------------
+
+.c-card__content {
+    display: inline-block;
+    padding-left: ($padding-baseline * 2);
+    padding-right: ($padding-baseline * 2);
+}
+
+
+
+
+//------------------------------------
+// $ Footer
+//------------------------------------
+
+.c-card__footer {
+    padding: ($padding-baseline * 2);
+    padding-top: 0;
+}
+
+
+
+
+//------------------------------------
+// $ Buttons
+//------------------------------------
+
+.c-card__button {
+    margin-bottom: 0;
+    width: 100%;
+}

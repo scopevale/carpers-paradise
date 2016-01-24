@@ -1,0 +1,98 @@
+//--------------------------------------------------------
+//	FU - Components - Panel
+//--------------------------------------------------------
+
+// Requires:
+//  * _variables.scss
+// Author(s):
+//	* Gareth Davies
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+
+
+//------------------------------------
+// $ Scaffolding
+//------------------------------------
+
+.c-panel {
+    background-color: $colour-light-grey;
+    padding: $padding-baseline;
+    margin: $margin-baseline 0;
+    font-size: 90%;
+}
+
+
+
+
+//------------------------------------
+// $ Background Modifiers
+//------------------------------------
+
+// Give the panel a background image of purple clouds
+
+.c-panel--clouds {
+    background: url('/images/My-Energy-BG-Blur.jpg') no-repeat $colour-purple;
+    background-position-x: -250px;
+    // White text please
+    color: $colour-white;
+}
+
+// Apply branding frame
+
+.c-panel--framed {
+    background: url('/images/backgrounds/frame-purple.png') no-repeat;
+    background: url('/images/backgrounds/frame-purple.svg') no-repeat;
+    background-position: right bottom;
+}
+
+
+
+
+//------------------------------------
+// $ Sibling combinations
+//------------------------------------
+
+// Panel with a following table component (span is due to react)
+
+.c-panel + span .c-table {
+    margin-top: -$margin-baseline;
+}
+
+
+
+//------------------------------------
+// $ Media Queries
+//------------------------------------
+
+// > 480px
+
+@media (min-width: 480px) {
+
+    .c-panel {
+        font-size: inherit;
+    }
+
+}
+
+// >= 768px
+
+@media (min-width: 768px) {
+
+    // Height control (Desktop only)
+    // NOTE: This is because of a design requirement
+
+    .c-panel--minheight {
+        // Match height of panel with 2 lines of text
+        min-height: 76px;
+    }
+
+}

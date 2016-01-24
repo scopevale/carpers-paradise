@@ -1,0 +1,48 @@
+//--------------------------------------------------------
+//	FU - Components - PaginationControl - D3/React component
+//--------------------------------------------------------
+
+// Requires:
+//  * _variables.scss
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+//------------------------------------
+// $ PaginationControl Element
+//------------------------------------
+
+.pagination-control-container {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+}
+
+.pagination-button-container {
+    position: relative;
+    color: $colour-pagination-control;
+    font-size: 8rem;
+    width: 10%;
+    // width: 33%;
+    text-align: end;
+    display: inline-block;
+
+    span {
+        position: relative;
+        width: 100%;
+
+        .left-pagination {
+            // left: 0%;
+        }
+
+        .right-pagination {
+            // right: 100%;
+        }
+    }
+}

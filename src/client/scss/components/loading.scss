@@ -1,0 +1,109 @@
+//--------------------------------------------------------
+// FU - Components - Loader
+//--------------------------------------------------------
+
+// Requires:
+// * _animate.scss
+// Author(s):
+// * Bade Adegboye
+// * Gareth Davies
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+
+
+//------------------------------------
+// $ Variables
+//------------------------------------
+
+$loader-size: 40px;
+$loader-border-size: 6px;
+
+
+
+
+//------------------------------------
+// $ Default Loader
+//------------------------------------
+
+.c-loading {
+    background-image: url('/images/loader.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+
+//------------------------------------
+// $ Overlay
+//------------------------------------
+
+.c-loading__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1000;
+    background-color: $colour-white;
+    background-color: $colour-overlay;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+//------------------------------------
+// $ CSS Animation
+//------------------------------------
+
+.c-loading {
+
+    // Use Modernizr to target CSS animation enabled browsers
+
+    .cssanimations & {
+        background-image: none;
+
+        &::after {
+            content: '';
+            animation-name: spin;
+            animation-duration: .9s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: $loader-size;
+            height: $loader-size;
+            margin-left: -($loader-size / 2);
+            margin-top: -($loader-size / 2);
+
+            border-width: $loader-border-size;
+            border-style: solid;
+            border-color: $colour-light-grey;
+            border-left-color: $colour-purple;
+            border-top-color: $colour-purple;
+            border-radius: 50%;
+        }
+
+        // Variations
+
+        &.c-loading--small::after {
+            width: ($loader-size / 2);
+            height: ($loader-size / 2);
+            margin-left: -($loader-size / 4);
+            margin-top: -($loader-size / 4);
+            border-width: ($loader-border-size / 2);
+        }
+    }
+
+}

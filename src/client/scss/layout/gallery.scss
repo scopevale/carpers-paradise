@@ -1,0 +1,189 @@
+//--------------------------------------------------------
+//	FU - Layout - Gallery
+//--------------------------------------------------------
+
+// Requires:
+//    * _variables.scss
+//    * _mixins.scss
+//    * _susy.scss
+// Author(s):
+//    * Gareth Davies
+// Notes:
+//    * Mobile first please
+//    * Currently allows for 2-5 columns
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+@import '../helper/mixins';
+@import '../config/susy';
+
+
+
+
+//------------------------------------
+// $ Variables
+//------------------------------------
+
+$gallery-map-odd: (
+    columns: 18,
+    global-box-sizing: border-box
+);
+
+
+
+
+//------------------------------------
+// $ Rows
+//------------------------------------
+
+.l-gallery__row {
+    @include clearfix();
+}
+
+
+
+
+//------------------------------------
+// $ Columns
+//------------------------------------
+
+.l-gallery__column {
+    width: 100%;
+}
+
+// >= 480px
+
+@media (min-width: 480px) {
+
+    .l-gallery__row {
+
+        // 3 Columns
+
+        &.has-3-columns {
+
+            .l-gallery__column {
+                // 2x2 layout
+                @include gallery(10);
+            }
+
+        }
+
+        // 4 Columns
+
+        &.has-4-columns {
+
+            .l-gallery__column {
+                // 2x2 layout
+                @include gallery(10);
+            }
+
+        }
+
+        // 5  Columns
+
+        &.has-5-columns {
+
+            .l-gallery__column {
+                // 3x2 layout
+                @include gallery(10);
+            }
+
+        }
+
+    }
+
+}
+
+// >= 550px
+
+@media (min-width: 550px) {
+
+    .l-gallery__row {
+
+        // 2 Columns
+
+        &.has-2-columns {
+
+            .l-gallery__column {
+                // 2x1 layout
+                @include gallery(10);
+            }
+
+        }
+
+    }
+
+}
+
+// >= 1024px
+
+@media (min-width: 1024px) {
+
+    .l-gallery__row {
+
+        // 4 Columns
+
+        &.has-4-columns {
+
+            .l-gallery__column {
+                // 4x1 layout
+                @include gallery(5);
+            }
+
+        }
+
+        // 5  Columns
+
+        &.has-5-columns {
+
+            .l-gallery__column {
+                // 5x1 layout
+                @include gallery(4);
+            }
+
+        }
+
+    }
+
+}
+
+
+
+
+//------------------------------------
+// $ Odd Columns
+//------------------------------------
+
+// NOTE: This section corrects an columns that don't
+// fit into the default 20 columns
+
+// >= 768px
+
+@media (min-width: 768px) {
+
+    // Change the layout settings
+
+    @include layout($gallery-map-odd);
+
+    .l-gallery__row {
+
+        // 3 Columns
+
+        &.has-3-columns {
+
+            .l-gallery__column {
+                // 3x1 layout
+                @include gallery(6);
+            }
+
+        }
+
+    }
+
+}

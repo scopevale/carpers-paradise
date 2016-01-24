@@ -1,0 +1,31 @@
+//-------------------------------------------------------------
+//	FU - Components - UsageGraph - D3/React Component container
+//-------------------------------------------------------------
+
+// Requires:
+//  * _variables.scss
+// Author(s):
+//	* Gareth Davies
+// Notes:
+//	* Mobile first please
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+
+
+//------------------------------------
+// $ LineChart
+//------------------------------------
+
+.line-chart {
+    circle, path {
+        stroke: $colour-green;
+    }
+
+    circle {
+        fill: $colour-green;
+    }
+}

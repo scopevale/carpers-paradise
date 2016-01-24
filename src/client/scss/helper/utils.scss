@@ -1,0 +1,181 @@
+//--------------------------------------------------------
+//	FU - Helper - Utils
+//--------------------------------------------------------
+
+// Requires:
+//  * _variables.scss
+//  * _mixins.scss
+// Author(s):
+//	* Gareth Davies
+// Notes:
+//	* All utility classes have a prefix of u-
+
+
+
+
+//------------------------------------
+// $ Imports
+//------------------------------------
+
+@import '../helper/variables';
+@import '../helper/mixins';
+
+
+
+
+//------------------------------------
+// $ Alignment
+//------------------------------------
+
+// Text alignment
+
+.u-align-text-center {
+    text-align: center;
+}
+
+.u-align-text-right {
+    text-align: right;
+}
+
+// Element alignment (e.g. image)
+
+.u-align-center {
+    margin: 0 auto;
+}
+
+
+
+
+//------------------------------------
+// $ Width
+//------------------------------------
+
+.u-width-full {
+    width: 100%;
+}
+
+
+
+
+//------------------------------------
+// $ Borders
+//------------------------------------
+
+.u-border-right {
+    border: $border-default;
+}
+
+
+
+
+//------------------------------------
+// $ Display
+//------------------------------------
+
+.u-display-block {
+    display: block;
+}
+
+
+
+
+//------------------------------------
+// $ Position
+//------------------------------------
+
+.u-position-relative {
+    position: relative;
+}
+
+
+
+
+//------------------------------------
+// $ Clearfix
+//------------------------------------
+
+.u-clearfix {
+    @include clearfix;
+}
+
+
+
+
+//------------------------------------
+// $ Margins
+//------------------------------------
+
+// To be used when all else fails!
+
+.u-margin-0 {
+    margin: 0;
+}
+
+.u-margin-top-0 {
+    margin-top: 0;
+}
+
+.u-margin-top-x1 {
+    margin-top: $margin-baseline;
+}
+
+.u-margin-top-x2 {
+    margin-top: $margin-baseline * 2;
+}
+
+.u-margin-top-x4 {
+    margin-top: $margin-baseline * 4;
+}
+
+.u-margin-bottom-0 {
+    margin-bottom: 0;
+}
+
+.u-margin-bottom-x1 {
+    margin-bottom: $margin-baseline;
+}
+
+.u-margin-bottom-x2 {
+    margin-bottom: $margin-baseline * 2;
+}
+
+.u-margin-bottom-x4 {
+    margin-bottom: $margin-baseline * 4;
+}
+
+.u-margin-right-x0\.5 {
+    margin-right: $margin-baseline / 2;
+}
+
+
+
+
+//------------------------------------
+// $ Padding
+//------------------------------------
+
+// To be used when all else fails!
+
+.u-padding-0 {
+    padding: 0;
+}
+
+.u-padding-x1 {
+    padding: $margin-baseline;
+}
+
+.u-padding-x2 {
+    padding: $margin-baseline * 2;
+}
+
+.u-padding-x4 {
+    padding: $margin-baseline * 4;
+}
+
+.u-padding-left--x1 {
+    padding-left: $margin-baseline;
+}
+
+.u-padding-right--x1 {
+    padding-right: $margin-baseline;
+}
