@@ -30,3 +30,6 @@ node_modules
 # fonts & data
 fonts
 data
+
+# security
+stormpath.yml

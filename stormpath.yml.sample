@@ -1,0 +1,6 @@
+client:
+  apiKey:
+    id: APIKEY_ID
+    secret: API_SECRET
+application:
+  href: APP_URL
