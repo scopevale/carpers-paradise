@@ -1,5 +1,17 @@
 import express from 'express';
 import stormpath from 'express-stormpath';
+
+import path from 'path';
+import favicon from 'serve-favicon';
+import logger from 'morgan';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+
+// my routes
+import routes from './routes/index.js';
+import booking from './routes/booking.js';
+//import error from './routes/error.js';
+
 //import request from 'request';
 import React from 'react';
 import ReactDOMServer from 'react-dom/Server';
@@ -14,8 +26,22 @@ class Server {
     this.init();
   }
 
+  // errorHandler(req, res) {
+  //   res.send('<!DOCTYPE html>' +
+  //     ReactDOMServer
+  //       .renderToStaticMarkup(
+  //         <TestHarness
+  //           testType='manual'
+  //           pageName='error'
+  //         />
+  //       )
+  //     );
+  // }
 
   init() {
+
+    // Axway data request for usage graph
+    //
     // this.server.use('/axway', (req, res) => {
     //   var options = {
     //     url: `http://api-a.ec2.impello.co.uk:8082${req.url}`
@@ -30,52 +56,108 @@ class Server {
     //       console.log(e);
     //     });
     // });
+    // end data request
 
-    // this.server.get('/automated-tests', (req, res) => {
-    //   res.send(ReactDOMServer.renderToStaticMarkup( < TestHarness testType = 'automated' / > ));
+
+    // automated Selenium tests
+    // this.server.get('/automated-tests/*', (req, res) => {
+    //   res.send('<!DOCTYPE html>' +
+    //     ReactDOMServer
+    //       .renderToStaticMarkup(
+    //         <TestHarness
+    //           testType='automated'
+    //           pageName='home'
+    //         />
+    //       )
+    //     );
     // });
 
-    this.server.get('/automated-tests/*', (req, res) => {
-      res.send('<!DOCTYPE html>' +
-        ReactDOMServer
-          .renderToStaticMarkup(
-            <TestHarness
-              testType='automated'
-              pageName={'HomePage'}
-            />
-          )
-        );
+
+
+    // uncomment after placing your favicon in /build/client/images
+    this.server.use(favicon(path.join(__dirname, './../../build/client/images', 'favicon.png')));
+    // console.log(path.join(__dirname, './../../build/client/images', 'favicon.png'));
+    // console.log(path.join(__dirname, './../../build/client'));
+    this.server.use(logger('dev'));
+    this.server.use(bodyParser.json());
+    this.server.use(bodyParser.urlencoded({ extended: false }));
+    this.server.use(cookieParser());
+    this.server.use(express.static(path.join(__dirname, './../../build/client')));
+
+    this.server.use('^(/|/home|/index)', routes);
+    this.server.use('/booking', booking);
+
+    // catch 404 and forward to error handler
+    this.server.use(function (req, res, next) {
+      var err = new Error('Not Found');
+      err.status = 404;
+      next(err);
     });
 
 
+    // error handlers
 
-    this.server.get('^(/|/home|/index)', (req, res) => {
+    // development error handler
+    // will print stacktrace
+    if (this.server.get('env') === 'development') {
+
+//      this.server.use(null, error);
+      this.server.use(function (err, req, res, next) {
+        res.status(err.status || 500);
+
+        res.send('<!DOCTYPE html>' +
+          ReactDOMServer
+            .renderToStaticMarkup(
+              <TestHarness
+                testType='manual'
+                pageName='error'
+              />
+            )
+          );
+        next(err);
+        // res.render('error', {
+        //   message: err.message,
+        //   error: err
+        // });
+      });
+    }
+
+    // production error handler
+    // no stacktraces leaked to user
+    this.server.use(function (err, req, res, next) {
+      res.status(err.status || 500);
+
       res.send('<!DOCTYPE html>' +
         ReactDOMServer
           .renderToStaticMarkup(
             <TestHarness
               testType='manual'
-              pageName='home'
+              pageName='error'
             />
           )
         );
+      // res.render('error', {
+      //   message: err.message,
+      //   error: {}
+      // });
     });
 
 
-    this.server.get('/booking', (req, res) => {
-      res.send('<!DOCTYPE html>' +
-        ReactDOMServer
-          .renderToStaticMarkup(
-            <TestHarness
-              testType='manual'
-              pageName='booking'
-            />
-          )
-        );
-    });
 
 
-    this.server.use(express.static(`${__dirname}/../../build/client`));
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
 
   start() {

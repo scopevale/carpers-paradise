@@ -16,6 +16,7 @@
 //------------------------------------
 
 @import '../helper/variables';
+@import '../config/susy';
 
 
 
@@ -34,6 +35,15 @@
     overflow: inherit;
     width: 100%;
     background-color: $colour-purple;
+
+    .l-site-header_Contact {
+      @include span(8 at 2 of 20);
+    }
+
+    .l-site-header_SocialMedia {
+      @include span(8 at 11 of 20);
+    }
+
 
     @media (min-width: $site-header-breakpoint) {
         background-color: $colour-white;

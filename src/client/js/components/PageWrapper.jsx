@@ -4,14 +4,19 @@ import BaseComponent from './BaseComponent';
 
 import _ from 'lodash';
 
+import SiteHeader from './SiteHeader';
+import SiteFooter from './SiteFooter';
+
 import HomePage from './HomePage';
-import YearCalendar from './YearCalendar';
+import BookingPage from './BookingPage';
+import ErrorPage from './ErrorPage';
 
 //import dataService from './../utils/DataService';
 
 const PAGE_NAMES = {
   'home': HomePage,
-  'booking': YearCalendar
+  'booking': BookingPage,
+  'error': ErrorPage
 };
 
 
@@ -25,9 +30,7 @@ class PageWrapper extends BaseComponent {
     this.handleResize = _.throttle(this.updateDimensions, 300);
 
     this.state = {
-      data: {
-        title: 'Page Title'
-      },
+      data: this.props.data || null,
       width: props.width
     };
   }
@@ -67,13 +70,15 @@ class PageWrapper extends BaseComponent {
 
   render() {
 
-    let contents = (
-      <p className='c-loading'></p>
+    let pageContents = (
+      <p className="c-loading">
+      </p>
     );
 
     if (this.state.data) {
-      let PageName = PAGE_NAMES[this.props.pageName];
-      contents = (
+      let PageName = PAGE_NAMES[this.props.pageName] || ErrorPage;
+
+      pageContents = (
         <PageName
           data={this.state.data}
           height={this.props.height}
@@ -84,16 +89,20 @@ class PageWrapper extends BaseComponent {
     }
 
     return (
-      <div className='c-page'>
-        {contents}
+      <div
+        className='l-site-content'
+      >
+        <SiteHeader />
+        {pageContents}
+        <SiteFooter />
       </div>
     );
   }
 }
 
 PageWrapper.propTypes = {
-  width: React.PropTypes.number,
-  height: React.PropTypes.number,
+  width: React.PropTypes.string,
+  height: React.PropTypes.string,
   margin: React.PropTypes.shape(
     {
       top: React.PropTypes.number,

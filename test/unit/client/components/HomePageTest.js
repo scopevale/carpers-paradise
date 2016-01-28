@@ -29,15 +29,12 @@ describe('<HomePage />', () => {
 
   context('componentDidMount', () => {
 
-    // it('should set state from the result of the dataService', sinon.test(function() {
-    //
-    //
+    // it('should set state from the result of the dataService', sinon.test(function () {
     //
     //     let fakeData = {
-    //         x: [],
-    //         y: [],
-    //         max: 0
+    //
     //     };
+    //     let fakeTitle = 'Page Title';
     //
     //     this.stub(dataService, 'getUsageData').callsArgWith(1, null, fakeData);
     //
@@ -47,9 +44,9 @@ describe('<HomePage />', () => {
     //
     // }));
 
-    it('should set mounted to true', sinon.test(function() {
+    it('should set mounted to true', sinon.test(function () {
 
-      let target = mount( < HomePage / > );
+      let target = mount( <HomePage /> );
 
       expect(target.instance().mounted).to.be.true;
     }));
@@ -85,7 +82,7 @@ describe('<HomePage />', () => {
 
   context('componentWillUnmount', () => {
 
-    it('should set mounted to false', sinon.test(function() {
+    it('should set mounted to false', sinon.test(function () {
 
       let target = mount( < HomePage / > );
 
@@ -111,13 +108,13 @@ describe('<HomePage />', () => {
     //
     // }));
 
-    it('should render <HomePage /> with an H1 contaning the text "Carper\'s Paradise"', sinon.test(function() {
+    it('should render <HomePage /> with an H1 contaning the text "Carper\'s Paradise"', sinon.test(function () {
 
       let target = shallow( < HomePage / > );
 
-      expect(target.is('h1')).to.be.ok;
+      expect(target.find('h1').is('h1')).to.be.ok;
 
-      expect(target.text()).to.equal('Carper\'s Paradise');
+      expect(target.find('h1').text()).to.equal('Carper\'s Paradise');
     }));
 
 

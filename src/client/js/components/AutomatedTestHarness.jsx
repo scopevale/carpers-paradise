@@ -60,12 +60,19 @@ class AutomatedTestHarness extends BaseComponent {
 
   render() {
 
-    return (<PageWrapper pageName={this.props.pageName} height={500} width={1000} margin={{
-      top: 20,
-      bottom: 70,
-      left: 20,
-      right: 20
-    }}/>);
+    return (
+      <PageWrapper
+        pageName={this.props.pageName}
+        height={500}
+        width={1000}
+        margin={{
+          top: 20,
+          bottom: 70,
+          left: 20,
+          right: 20
+        }}
+      />
+    );
   }
 }
 

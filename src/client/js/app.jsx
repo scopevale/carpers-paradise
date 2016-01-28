@@ -7,5 +7,5 @@ console.log('here in app.jsx');
 
 ReactDOM.render(
     <TestHarnessWrapper pageName={global.pageName} testType={global.testType}/>,
-    document.getElementsByClassName('page-container')[0]
+    document.getElementsByClassName('l-site-content__container')[0]
 );

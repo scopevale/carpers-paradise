@@ -1,8 +1,9 @@
 import React from 'react';
 
 import BaseComponent from './BaseComponent';
+import YearCalendar from './YearCalendar';
 
-class HomePage extends BaseComponent {
+class BookingPage extends BaseComponent {
 
   constructor(props) {
 
@@ -34,13 +35,10 @@ class HomePage extends BaseComponent {
       <div
         className="l-site-content__SitePage"
       >
-        <h1>
-          Carper's Paradise
-        </h1>
+        <YearCalendar />
       </div>
     );
-
   }
 }
 
-export default HomePage;
+export default BookingPage;

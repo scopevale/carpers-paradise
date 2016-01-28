@@ -4,10 +4,16 @@ import DayPicker, { DateUtils } from 'react-day-picker';
 
 export default class Range extends React.Component {
 
-  state = {
-    from: null,
-    to: null
-  };
+  constructor(props) {
+    super(props);
+
+    this._bind('handleDayClick', 'handleResetClick');
+
+    this.  state = {
+      from: null,
+      to: null
+    };
+  }
 
   handleDayClick(e, day) {
     const range = DateUtils.addDayToRange(day, this.state);
@@ -35,10 +41,13 @@ export default class Range extends React.Component {
         { !from && !to && <p>Please select the <strong>first day</strong>.</p> }
         { from && !to && <p>Please select the <strong>last day</strong>.</p> }
         { from && to &&
-          <p>You chose from {
-              moment(from).format('L') } to {
-              moment(to).format('L') }. <a
-              href='#' onClick={ this.handleResetClick.bind(this) }>Reset</a>
+        <p>You chose from {
+        moment(from).format('L') } to {
+          moment(to).format('L') }. <a
+                                      href='#' onClick={ this.handleResetClick}
+                                    >
+                                      Reset
+                                    </a>
           </p>
         }
 
@@ -46,7 +55,7 @@ export default class Range extends React.Component {
           ref='daypicker'
           numberOfMonths={ 2 }
           modifiers={ modifiers }
-          onDayClick={ this.handleDayClick.bind(this) }
+          onDayClick={ this.handleDayClick }
         />
       </div>
     );

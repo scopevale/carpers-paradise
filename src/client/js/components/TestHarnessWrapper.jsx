@@ -4,9 +4,6 @@ import BaseComponent from './BaseComponent';
 import ManualTestHarness from './ManualTestHarness';
 import AutomatedTestHarness from './AutomatedTestHarness';
 
-
-
-
 const TEST_TYPES = {
   'manual': ManualTestHarness,
   'automated': AutomatedTestHarness

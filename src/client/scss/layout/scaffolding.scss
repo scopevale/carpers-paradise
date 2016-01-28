@@ -16,6 +16,7 @@
 
 @import '../helper/variables';
 @import '../helper/mixins';
+@import '../config/susy';
 
 
 
@@ -25,13 +26,14 @@
 //------------------------------------
 
 html {
-    position: relative;
-    min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-    margin: 0 0 $site-footer-height;
-    background-color: $colour-light-grey;
+  @include container(100%);
+  margin: 0 0 $site-footer-height;
+  background-color: $colour-light-grey;
 }
 
 
@@ -44,33 +46,31 @@ body {
 // Shared code
 
 .l-site-content {
-    width: 100%;
-    max-width: $layout-site-max-width;
-    margin: 0 auto;
-    background-color: $colour-white;
-    min-height: calc(100% - #{$site-header-height});
+  @include container(100%);
+//  width: 100%;
+  max-width: $layout-site-max-width;
+  min-height: calc(100% - #{$site-header-height});
+  margin: 0 auto;
+  background-color: $colour-white;
 }
 
 .l-site-content__container {
-    padding: 0 $padding-baseline;
+  @include container(100%);
+  padding: 0 ($padding-baseline * 0);
 }
 
 // >= 769px
 
 @media (min-width: 769px) {
-
-    .l-site-content__container {
-        padding: 0 ($padding-baseline * 2);
-    }
-
+  .l-site-content__container {
+    padding: 0 ($padding-baseline * 2);
+  }
 }
 
 // >= 1024px
 
 @media (min-width: 1024px) {
-
-    .l-site-content__container {
-        padding: 0 ($padding-baseline * 4);
-    }
-
+  .l-site-content__container {
+    padding: 0 ($padding-baseline * 4);
+  }
 }

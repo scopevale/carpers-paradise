@@ -16,7 +16,7 @@
 //------------------------------------
 
 @import '../helper/variables';
-
+@import '../config/susy';
 
 
 
@@ -26,9 +26,9 @@
 //------------------------------------
 
 .l-site-footer {
-    display: block;
-    width: 100%;
-    background-color: $colour-purple;
+  display: block;
+  width: 100%;
+  background-color: $colour-green;
 }
 
 // >= 769px

@@ -83,12 +83,19 @@ class ManualTestHarness extends BaseComponent {
 
   render() {
 
-    let pageWrapper = (<PageWrapper pageName={this.props.pageName} height={500} width={1000} margin={{
-      top: 20,
-      bottom: 70,
-      left: 20,
-      right: 20
-    }}/>);
+    let pageWrapper = (
+      <PageWrapper
+        pageName={this.props.pageName}
+        height={'100%'}
+        width={'100%'}
+        margin={{
+          top: 20,
+          bottom: 70,
+          left: 20,
+          right: 20
+        }}
+      />
+    );
 
     // if (this.state.error) {
     //   pageWrapper = (

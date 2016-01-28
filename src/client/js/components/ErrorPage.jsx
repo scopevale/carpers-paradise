@@ -2,7 +2,7 @@ import React from 'react';
 
 import BaseComponent from './BaseComponent';
 
-class HomePage extends BaseComponent {
+class ErrorPage extends BaseComponent {
 
   constructor(props) {
 
@@ -12,11 +12,6 @@ class HomePage extends BaseComponent {
       data: null
     };
   }
-
-  // static propTypes = {
-  //   property: React.PropTypes.TYPE.isRequired,
-  //   // ...
-  // }
 
   componentDidMount() {
 
@@ -35,7 +30,7 @@ class HomePage extends BaseComponent {
         className="l-site-content__SitePage"
       >
         <h1>
-          Carper's Paradise
+          Error 404
         </h1>
       </div>
     );
@@ -43,4 +38,4 @@ class HomePage extends BaseComponent {
   }
 }
 
-export default HomePage;
+export default ErrorPage;
